@@ -7,19 +7,15 @@ def zig_zag(array)
     array.each_with_index do |v, i|
         if array[i+1] != nil
             if flag == 0
-                if v < array[i+1]
-                    flag = 1
-                else
+                if not v < array[i+1]
                     array[i], array[i+1] = array[i+1], array[i]
-                    flag = 1
                 end
+                flag = 1
             elsif flag == 1
-                if v > array[i+1]
-                    flag = 0
-                else
+                if not v > array[i+1]
                     array[i], array[i+1] = array[i+1], array[i]
-                    flag = 0
                 end
+                flag = 0
             end
         end
     end
