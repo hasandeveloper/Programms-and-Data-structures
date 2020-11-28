@@ -37,4 +37,10 @@ def right_hand_side_greater_element(array)
     highest_right_hand_elements.push(-1)
 end
 
-p right_hand_side_greater_element([16,17,4,3,5,2])
+p right_hand_side_greater_element([6,2,4,5,3,1])
+
+#I/P:-  6,2,4,5,3,1
+#O/P:-  5, 5, 5, 3, 1, -1
+
+#I/P:- 16, 17, 4, 3, 5, 2
+#O/P:- 17, 5, 5, 5, 2, -1
