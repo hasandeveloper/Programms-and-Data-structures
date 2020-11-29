@@ -20,7 +20,7 @@ def find_duplicates(array)
     end
 end
 
-p find_duplicates([4, 3, 2, 1, 4])
+p find_duplicates([1, 3, 2, 1, 4])
 
 # Time complexity 
-O(n)
+# O(n)
