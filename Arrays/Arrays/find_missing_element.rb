@@ -26,4 +26,4 @@ p find_missing_element([15,17,18,19])
 
 
 # Time complexity
-O(n)
+# O(n)
