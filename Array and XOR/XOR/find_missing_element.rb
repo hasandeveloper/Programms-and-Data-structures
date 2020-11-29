@@ -21,7 +21,9 @@ def find_missing_element(array)
     return range - array
 end
 
-p find_missing_element([2, 1, 3, 5, 6])
+p find_missing_element([15,17,18,19])
 
 
 
+# Time complexity
+O(n)
