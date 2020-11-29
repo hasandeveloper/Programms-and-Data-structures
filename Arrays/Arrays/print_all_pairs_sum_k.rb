@@ -24,7 +24,6 @@ def print_all_pairs_sum_equal_to_k(array, k)
                 pairs << pair
             end
         end
-        # binding.pry
         if !pairs.empty?
          p pairs.join(", ").split(", ").join(" ")
         end
