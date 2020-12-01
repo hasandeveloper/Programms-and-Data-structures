@@ -56,3 +56,5 @@ end
                 
 p max_diff([7,6,4,3,1])
 
+# Time complexity
+# O(n)
