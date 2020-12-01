@@ -21,3 +21,6 @@ def girl_or_boy(array)
 end
 
 p girl_or_boy([1,2,3,4,7])
+
+# Time complexity
+# O(n2)
