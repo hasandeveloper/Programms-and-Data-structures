@@ -7,7 +7,7 @@ def perfect_arrays(array)
     array.each do |ar|
         reverse.unshift(ar)
     end
-# binding.pry
+    
     if array == reverse
         return "PERFECT"
     else
