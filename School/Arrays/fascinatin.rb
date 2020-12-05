@@ -22,7 +22,6 @@ require 'pry'
 def fascinating(number)   
 
     [number, number * 2, number * 3].join("").split("").each do |n|
-        # binding.pry
         if !(1..9).to_a.include? n.to_i
             return "Not Fascinating"
         end
