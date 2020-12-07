@@ -5,6 +5,8 @@
 # arr[] = {10, 3, 5, 6, 2}
 # prod[] = {180, 600, 360, 300, 900}
 
+# Refer for solution
+# https://leetcode.com/problems/product-of-array-except-self/
 
 require 'pry'
 
