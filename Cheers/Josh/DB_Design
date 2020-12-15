@@ -1,0 +1,32 @@
+Scenario
+
+0. One student upload a book, Once upload it will start reflecting in the site.
+1. student can share a book to other student
+
+
+students
+shares
+books
+
+students                                       
+  has_many :shares
+  has_many :books : :through shares
+
+
+
+shares
+  belongs_to :student
+  belongs_to :book
+
+  id
+  student_id
+  book_id
+
+
+uploads
+   student_id
+   book_id
+
+books
+  
+

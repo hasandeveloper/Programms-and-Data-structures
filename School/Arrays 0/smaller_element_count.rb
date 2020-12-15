@@ -4,7 +4,7 @@ def smaller_element(array, n)
 
     array.each do |arr|
 
-        if arr < n
+        if arr <= n
             p arr
         end
 
