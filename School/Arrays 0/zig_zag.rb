@@ -3,7 +3,6 @@ require 'pry'
 def zig_zag(array)
 
     flag = 0
-    zig_zag = []
     array.each_with_index do |v, i|
         if array[i+1] != nil
             if flag == 0
