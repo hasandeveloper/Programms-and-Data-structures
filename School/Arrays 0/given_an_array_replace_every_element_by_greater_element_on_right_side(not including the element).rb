@@ -8,14 +8,15 @@ def right_hand_side_greater_element(array)
       array.each_with_index do |v, i|
 
         if index != i
-            #push right hand side elements
+            #push right hand side elements excluding i value
+
             length = array.length
             number = length-i
             number.times do |n|
                 right_hand_elements.push(array[n+i])
             end
 
-            #swap the elements to highest 
+            #swap the elements to highest it means sort 
             right_hand_elements.each_with_index do |value, index|
             if right_hand_elements[index+1] != nil
                 if value > right_hand_elements[index+1]
