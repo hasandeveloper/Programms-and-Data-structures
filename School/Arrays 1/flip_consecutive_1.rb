@@ -5,25 +5,32 @@
 require 'pry'
 def consecutive_1s(arrays)
 
-    s=0
-    e=0
+    s=-1
     zero_count = 0
-    arrays.unshift(-1) && arrays.push(0)
-    arrays.each_with_index do |v, i|
+    arrays.push(0)
+    n=0
+    arrays.each_with_index do |v, e|
 
-        if not v == 0
-            e+=1
-        elsif v == 0
+        if v == 0
             zero_count += 1
-            e+=1
-
         end
-        # binding.pry
+
+
 
         if zero_count == 2
-            binding.pry
+            puts e-s-1
+
+            (n..arrays.length-1).to_a.each do |index|
+
+                if arrays[index] == 0
+                    s = index
+                    n = index+1
+                    break
+                end
+            end
 
             zero_count -= 1
+
         end
     
         
@@ -31,4 +38,4 @@ def consecutive_1s(arrays)
 
 end
 
-p consecutive_1s([0,1,1,1,0,1,0,1,0,1,0,1])
+ consecutive_1s([0,1,1,1,0,1,0,1,0,1,0,1])
