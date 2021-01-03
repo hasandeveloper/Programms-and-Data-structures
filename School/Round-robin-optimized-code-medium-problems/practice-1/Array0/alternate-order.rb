@@ -3,9 +3,9 @@
 # i/p [1, 2, 3, 4]
 # o/p  1,3
 
-require 'pry'
-def alternate_order(my_array)
-    my_array.select{ |arr| arr % 2 != 0 }
+def alternate_order(array)
+    array.select{ |ele| ele % 2 != 0 }
 end
 
 p alternate_order([1, 2, 3, 4])
+
