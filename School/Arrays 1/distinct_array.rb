@@ -33,10 +33,10 @@ def distinct_array(array)
     (0..array.length-1).each do |i|
         array[i] = temp[i]
     end
-
+array
 end
 
-p distinct_array([1, 4, 0, 3, 2])
+p distinct_array([1, 3, 0, 2])
 
 
 #For more clearance of question

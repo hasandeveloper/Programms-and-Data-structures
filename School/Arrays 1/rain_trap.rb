@@ -57,6 +57,7 @@ def rain_trap(array)
             (temp.length-1).times do |i|
                 if temp[i] > temp[i+1]
                     temp[i], temp[i+1] = temp[i+1], temp[i]
+                    swap = true
                 end
             end
 

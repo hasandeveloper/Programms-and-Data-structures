@@ -8,6 +8,8 @@ def mean_and_median(array)
         end
 
     mean = sum/array.length
+
+    p "mean #{mean}"
     loop do
 
         swaped = false
@@ -21,7 +23,12 @@ def mean_and_median(array)
 
         break if not swaped
     end
-    p "Mean #{mean} and median #{array[array.length/2]}"
+
+    half = array.length/2
+
+    
+    p "median #{array.length.odd? ? array[half] : (array[half] + array[half] - array[half - 1]) / 2}"
+    
 end
 
  mean_and_median([5,7,0,2,1])
