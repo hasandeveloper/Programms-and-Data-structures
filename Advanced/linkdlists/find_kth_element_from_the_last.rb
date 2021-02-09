@@ -41,7 +41,6 @@ class LinkedList
         e = 1
         node = @head
         count = 1
-        # binding.pry
         while node = node.pointer
             e+=1
             if e > k
@@ -64,9 +63,8 @@ class LinkedList
         if count == k
             return @head.data
         else
-            return "k is the upper bound of ll, please maintain within ll lower bound for k"
+            return "k is the upper bound of ll, your kth value should be within a lower bound of ll"
         end
-        # binding.pry
 
     end
 
