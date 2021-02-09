@@ -8,9 +8,7 @@ class Node
         @pointer = nil
     end
 
-
 end
-
 
 class LinkedList
 
@@ -31,7 +29,6 @@ class LinkedList
       return current_node if !current_node.pointer
       return current_node if !current_node.pointer while (current_node = current_node.pointer)
     end
-
 
     def list
         node = @head
