@@ -85,9 +85,4 @@ ll.push 10
 
 
 
-p ll.find_kth_element_from_last 12
-
-#loop holes
-#return value even if k is total equal to length of linked list
-
-
+p ll.find_kth_element_from_last 5
