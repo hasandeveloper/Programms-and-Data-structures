@@ -41,12 +41,15 @@ class LinkedLists
         fast_ptr = @head
 
         while fast_ptr != nil && fast_ptr.pointer != nil
-            # binding.pry
             fast_ptr = fast_ptr.pointer.pointer
             slow_ptr = slow_ptr.pointer
         end
 
-        binding.pry
+        p "middle element is #{slow_ptr.data}"
+        return "odd length" if fast_ptr == nil
+        return "even length" if fast_ptr.pointer != nil
+
+        # binding.pry
 
     end
 
@@ -59,4 +62,6 @@ ll.push 2
 ll.push 3
 ll.push 4
 ll.push 5
-ll.find_middle_element
+ll.push 6
+ll.push 7
+p ll.find_middle_element
