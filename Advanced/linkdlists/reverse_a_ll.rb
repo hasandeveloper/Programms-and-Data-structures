@@ -1,4 +1,5 @@
 # using single ll
+require 'pry'
 class Node
     attr_reader :data
     attr_accessor :pointer
@@ -43,12 +44,14 @@ def LinkedList.reverse head
     current_node = head
     previous_node = nil
     next_node = nil
+    while current_node
+        next_node = current_node.pointer
 
-    while current_node 
-        next_node = current_node.pointer 
-        current_node.pointer = previous_node 
-        previous_node = current_node 
-        current_node = next_node 
+        current_node.pointer = previous_node
+
+        previous_node = current_node
+
+        current_node = next_node
     end
 
     return previous_node
