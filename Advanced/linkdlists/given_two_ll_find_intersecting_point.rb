@@ -70,6 +70,7 @@ def find_intersecting_point head1, head2
     node2 = head2
     stack2 = []
     intersect_element = 0
+    
     stack1 << head1.data
     while node1 = node1.pointer
         stack1 << node1.data
