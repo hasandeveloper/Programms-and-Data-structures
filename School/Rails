@@ -1,0 +1,9 @@
+>> User.find(2) # raises an exception
+>> User.find_by_id(2) # nil
+>> User.where(id: 2).first # nil
+
+what is has and belongs to 
+what is includes and joins db
+what is after create and after save
+what is lazy load and eager load
+
