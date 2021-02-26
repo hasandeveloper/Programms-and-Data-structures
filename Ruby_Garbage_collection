@@ -63,3 +63,8 @@ Here is the below memory structure
  
        heap        => uses by ruby (Memory managed by programmer)
  -----------------
+
+
+ Reference
+
+ https://www.cloudbees.com/blog/visualizing-garbage-collection-ruby-python/
