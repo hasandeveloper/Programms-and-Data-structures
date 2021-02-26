@@ -1,0 +1,65 @@
+If your working in ruby, For you memory is infinite it means you dont need to free space once your obejct is created in memory manually, Lets see how ruby garbage collections works for you.
+
+Before Diving into Ruby GC, I want to explain about how in C cleanup manually should do yourself, In c if your writing code you have to free the memory space manually that is called low level language(which is near to your machine) Even if your writing code you have to think and write about cleaning the memory once the object is allocated, But in ruby dont need to cleanup up memory ruby itself will do this job for you.
+
+Different Ruby implementations
+There are a number of implementations of Ruby. Three popular ones are: MRI (Matz's Ruby Interpreter), Rubinius and JRuby. Different Ruby implementations use different methods of GC. In this article we'll focus on MRI, which is what most Ruby developers use.
+
+RUBY'S HEAP
+A computer has two types of memory: Stack and Heap. The stack is very fast and is local to the context of a function call. This means that every variable that is declared in the stack is immediately freed once the function is done. The stack is very limited in size, so you cannot store larger objects that contain an image or file's data, for example.
+
+This is a bad fit for storing Ruby objects. These objects very often stick around for longer than a method call. Also, it's almost impossible to predict whether an object will be too big for the stack.
+
+Therefore Ruby uses the other type of memory: the heap. On the heap a program can claim some memory and is then responsible for cleanup once it's done with that memory. Ruby uses this by claiming a single slab of memory to use to store Ruby objects. This is referred to as Ruby's heap.
+
+Stack summary =>
+
+Stack memory	Very fast
+Used memory is freed automatically when the function call ends
+Very limited in size
+
+Heap Summary =>
+
+Heap memory	Slightly slower than stack
+No automatic cleanup
+Size is only limited by the available memory of the computer
+
+
+So Ruby objects are always allocated on Ruby's heap. If they're smaller than 40 bytes their content can be directly embedded in the object. Otherwise the object points to a separate segment of memory on Ruby's heap. So your Ruby object is often stored in two completely different locations in memory. Once Ruby's heap is full it will create a new heap, which is used for new objects.
+
+Mark and Sweep
+
+MRI uses a GC algorithm called Mark and Sweep. This operates by first doing a mark phase. In the mark phase the Garbage Collector scans all currently existing objects and sets a marked flag on every object it believes can be cleaned up.
+
+
+The mark phase halts the execution of your code. The reason for this is that the Garbage Collector has to understand all the relationships between objects that exist. If the program would be running during the mark process things might change in the meantime and the Garbage Collector wouldn't be sure what the current state of an object is.
+
+Secondly the sweep phase starts. This runs in the background on Ruby 1.9 and up. The Garbage Collector quietly frees every object that was marked in the mark phase. The memory is only available again after the sweep.
+
+Since the mark phase halts the execution of your code, this is where problems in production can occur. The sweep phase is relatively benign.
+
+
+Mark summary =>
+
+Mark phase	Scans existing objects
+Sets mark flag if object can be cleaned
+Halts code execution
+
+Sweep Summary =>
+
+Sweep phase	Runs in the background
+Cleans up marked objects
+Memory available again after sweep is competed
+
+
+Here is the below memory structure
+
+ -----------------
+   Kernal space    => uses by OS and programs
+ -----------------
+       stack       => uses by c compiler (Memory managed by compiler)
+
+     userspace
+ 
+       heap        => uses by ruby (Memory managed by programmer)
+ -----------------
