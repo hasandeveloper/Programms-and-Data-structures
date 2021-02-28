@@ -68,3 +68,8 @@ Here is the below memory structure
  Reference
 
  https://www.cloudbees.com/blog/visualizing-garbage-collection-ruby-python/
+
+
+ Recursion in ruby 
+
+ The concept of Recursion solves many problems and makes the process easier as when calculating through Iterative process. Thus, if a person masters the concept of Recursion, one could solve many problems in lesser time and lesser lines of code. However, Recursion in Ruby sometimes produces “SystemStackError: stack level too deep” when a large number is used as an input(This number varies with the system). This means that we would have to use iterative approach to a problem involving large inputs.
