@@ -36,7 +36,7 @@ end
 p "In order"
 inorder_traversal root
 
-#Pre Order traversal follows [D,L,R] means data, left and right
+#Pre Order traversal follows [D,L,R] means data, left and right where information flows top to bottom
 
 def preorder_traversal node
 
@@ -53,19 +53,19 @@ end
 p "Pre order"
 preorder_traversal root
 
-#Post Order traversal follows [L,R,D] means left, right and data
+#Post Order traversal follows [L,R,D] means left, right and data where information flows bottom to top
 
-def preorder_traversal node
+def postorder_traversal node
 
     if node == nil
         return
     end
 
-    preorder_traversal node.left
-    preorder_traversal node.right
+    postorder_traversal node.left
+    postorder_traversal node.right
     p node.value 
 
 end
 
 p "Post order"
-preorder_traversal root
+postorder_traversal root
