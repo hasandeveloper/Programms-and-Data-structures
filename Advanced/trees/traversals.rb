@@ -37,6 +37,56 @@ end
 p "In order"
 inorder_traversal root
 
+                                    # Heap/Stack Frame for inorder_traversal
+                                        # |                                 | 
+         #  inorder_traversal( nil  )   # |  if nil == nil                  |
+                                       #  |      return                     |    
+                                        # |  end                            |    
+                                        # |                                 | 
+                                        # |---------------------------------|
+                                        # |                                 | 
+         #  inorder_traversal( 4  )     # |  if 4 == nil                    |
+                                       #  |      return                     |    
+                                        # |  end                            |    
+                                        # |                                 |
+                                        # |  inorder_traversal nil          |    
+                                        # |                                 |
+                                        # |  p 4                            |  4
+                                        # |                                 |
+                                        # |  inorder_traversal nil          |                       
+                                        # |                                 |    
+                                        # |  end                            |    
+                                        # |                                 | 
+                                        # |---------------------------------|
+                                        # |                                 | 
+         #  inorder_traversal( 2  )     # |  if 2 == nil                    |
+                                       #  |      return                     |    
+                                        # |  end                            |    
+                                        # |                                 |
+                                        # |  inorder_traversal 4            |    
+                                        # |                                 |  
+                                        # |  p 2                            | 2 
+                                        # |                                 |
+                                        # |  inorder_traversal 5            | 5                      
+                                        # |                                 |    
+                                        # |  end                            |    
+                                        # |                                 | 
+                                        # |---------------------------------|
+                                        # |                                 | 
+         #  inorder_traversal( 1  )     # |  if 1 == nil                    |
+                                       #  |      return                     |    
+                                        # |  end                            |    
+                                        # |                                 |
+                                        # |  inorder_traversal 2            |    
+                                        # |                                 | 
+                                        # |  p 1                            | 1
+                                        # |                                 |
+                                        # |  inorder_traversal 3            | 3                     
+                                        # |                                 |    
+                                        # |  end                            |    
+                                        # |                                 | 
+                                        # |---------------------------------|
+
 #Pre Order traversal follows [D,L,R] means data, left and right where information flows top to bottom
 
 def preorder_traversal node
@@ -53,6 +103,52 @@ end
 
 p "Pre order"
 preorder_traversal root
+
+
+                                    # Heap/Stack Frame for preorder_traversal
+                                        # |                                 | 
+         #  preorder_traversal( 4  )    # |  if 4 == nil                    |
+                                       #  |      return                     |    
+                                        # |  end                            |    
+                                        # |  p 4                            | 4
+                                        # |  preorder_traversal nil         |    
+                                        # |                                 | 
+                                        # |                                 | 
+                                        # |                                 |
+                                        # |  preorder_traversal nil         |                      
+                                        # |                                 |    
+                                        # |  end                            |    
+                                        # |                                 | 
+                                        # |---------------------------------|
+                                        # |                                 | 
+         #  preorder_traversal( 2  )    # |  if 2 == nil                    |
+                                       #  |      return                     |    
+                                        # |  end                            |    
+                                        # |  p 2                            | 2
+                                        # |  preorder_traversal 4           |    
+                                        # |                                 | 
+                                        # |                                 | 
+                                        # |                                 |
+                                        # |  preorder_traversal 5           | 5                     
+                                        # |                                 |    
+                                        # |  end                            |    
+                                        # |                                 | 
+                                        # |---------------------------------|
+                                        # |                                 | 
+         #  preorder_traversal( 1  )    # |  if 1 == nil                    |
+                                       #  |      return                     |    
+                                        # |  end                            |    
+                                        # |  p 1                            | 1
+                                        # |  preorder_traversal 2           |    
+                                        # |                                 | 
+                                        # |                                 | 
+                                        # |                                 |
+                                        # |  preorder_traversal 3           | 3                   
+                                        # |                                 |    
+                                        # |  end                            |    
+                                        # |                                 | 
+                                        # |---------------------------------|
+
 
 #Post Order traversal follows [L,R,D] means left, right and data where information flows bottom to top
 
