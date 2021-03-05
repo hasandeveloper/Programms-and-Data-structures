@@ -1,0 +1,4 @@
+1. sum of height of all non leaf node  = O(n
+2. code for Ropes problem
+3. code for median problem
+4. code for m sorted 

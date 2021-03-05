@@ -1,0 +1,1 @@
+1. Design a DS which have push () pop() and getmin() in O(1) 

@@ -1,0 +1,10 @@
+Heap Assignment
+
+https://www.hackerrank.com/challenges/minimum-average-waiting-time/problem
+https://www.hackerrank.com/challenges/qheap1/problem
+https://leetcode.com/problems/network-delay-time/description/
+https://leetcode.com/problems/top-k-frequent-words/description/
+https://leetcode.com/problems/split-array-into-consecutive-subsequences/description/
+https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
+https://leetcode.com/problems/sliding-window-maximum/description/
+https://leetcode.com/problems/find-k-th-smallest-pair-distance/description/ 
