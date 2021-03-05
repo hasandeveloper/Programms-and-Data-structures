@@ -1,4 +1,5 @@
 
+# refer https://www.youtube.com/watch?v=2eVY0Wtgqv4
 class Node
     attr_reader :value
     attr_accessor :left, :right

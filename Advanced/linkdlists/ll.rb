@@ -48,3 +48,4 @@ ll.push 10
 ll.push 15
 ll.list
 
+# Reference tutorial for linked list https://www.youtube.com/watch?v=yqFbIwzkd4w&t=628s

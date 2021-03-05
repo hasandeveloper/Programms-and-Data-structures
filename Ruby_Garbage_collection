@@ -69,7 +69,153 @@ Here is the below memory structure
 
  https://www.cloudbees.com/blog/visualizing-garbage-collection-ruby-python/
 
+  https://www.reddit.com/r/ruby/comments/9etwak/insane_memory_usage_of_ruby_compared_to_python/
 
  Recursion in ruby 
 
  The concept of Recursion solves many problems and makes the process easier as when calculating through Iterative process. Thus, if a person masters the concept of Recursion, one could solve many problems in lesser time and lesser lines of code. However, Recursion in Ruby sometimes produces “SystemStackError: stack level too deep” when a large number is used as an input(This number varies with the system). This means that we would have to use iterative approach to a problem involving large inputs.
+
+
+ Which is better recursion or iterative
+ 
+ https://stackoverflow.com/questions/15346774/are-recursive-methods-always-better-than-iterative-methods-in-java#:~:text=The%20fact%20is%20that%20recursion,so%20heavily%20used%20during%20recursion.
+
+
+                                  Before moving to recursion do backtracing of fuctions
+
+def bar(a)
+    c = 15
+    a = a + c      
+    p a             20
+    return a       
+end
+
+def foo(a)
+    c = 5
+    a = a + c     
+    a = bar(c)     
+    p a            20
+    return a
+end
+
+def main 
+    a = 10
+    p a            10
+    a = foo(a)     
+    return 0
+end
+
+main()
+
+# #  o/p
+# 10 main
+# 20 bar
+# 20 foo  
+
+
+#Here as soon as main function is calling to foo and foo calling to bar in stack frame, In stack(c)/heap(ruby)  frame will be created as soon as main function called. once frame created to main, predefined space will be created to store variable which is present in main and also you can obeserve in main function a = foo() here before foo get called after this calling function whatever lines are there even those lines will be stored in stack/heap memory and then for foo another frame will be create same will be happen for foo how happend for main.
+
+# But once you return in any function those functions will be deleted in the stack/heap memory
+
+#  For the Above functions Stack/heap Frame visualization
+# |----------------------------|
+# |           bar              |
+# |           c = 15           |   
+# |           a = a + c        |   // 15
+# |           p a              |   // print second 20         As soon as do function return the frame will be deleted              
+# |                            |   
+# |----------------------------|
+# |           foo              |
+# |           c = 5            |   
+# |           a = a + c        |   // 15
+# |           a = bar(c)       |   // print third 20                      
+# |           p a              |   
+# |----------------------------|   
+# |           main             |   
+# |          a = 10            |   
+# |          p a               |   // print first 10
+# |          a = foo(a)        |   //20
+# |----------------------------|
+
+
+                                    Recusion works based on 3 principles
+1.Base condition/terminating condition
+2.processing
+3.return                                    
+
+
+
+def work_hard a
+    if a == 0
+        return 
+    end
+
+    work_hard(a -= 1)
+    p a
+
+    return a
+end
+
+work_hard 5
+                    # |      if 0 == 0             |   
+# work_hard(0)      # |         return             |   
+                    # |      end                   | 
+                    # |                            |
+                    # |                            |
+                    # |                            |
+                    # |                            |
+                    # |                            | 
+                    # |                            |   
+                    # |----------------------------|
+                    # |      if 1 == 0             |   
+# work_hard(1)      # |         return 0           |   
+                    # |      end                   | 
+                    # |                            |
+                    # |       work_hard(1 -= 1)    |
+                    # |       p 0                  |
+                    # |                            |
+                    # |       return 0             | 
+                    # |                            |   
+                    # |----------------------------|
+                    # |      if  2 == 0            |   
+# work_hard(2)      # |         return 0           |   
+                    # |      end                   | 
+                    # |                            |
+                    # |       work_hard(2 -= 1)    |
+                    # |       p 1                  |
+                    # |                            |
+                    # |       return 1             | 
+                    # |                            |   
+                    # |----------------------------|
+                    # |      if 3 == 0             |   
+# work_hard(3)      # |         return 0           |   
+                    # |      end                   | 
+                    # |                            |
+                    # |       work_hard(3 -= 1)    |
+                    # |       p 2                  |
+                    # |                            |
+                    # |       return 2             | 
+                    # |                            |   
+                    # |----------------------------|
+                    # |      if 4 == 0             |   
+# work_hard(4)      # |         return 0           |   
+                    # |      end                   | 
+                    # |                            |
+                    # |       work_hard(4 -= 1)    |
+                    # |       p 3                  |
+                    # |                            |
+                    # |       return 3             | 
+                    # |                            |     
+                    # |----------------------------|   
+                    # |      if 5 == 0             |   
+# work_hard(5)      # |         return 0           |   
+                    # |      end                   | 
+                    # |                            |
+                    # |       work_hard(5 -= 1)    |
+                    # |       p 4                  |
+                    # |                            |
+                    # |       return 4             | 
+                    # |                            |   
+                    # |----------------------------|
+
+# For the above we took 5 internal space in the heap/stack
