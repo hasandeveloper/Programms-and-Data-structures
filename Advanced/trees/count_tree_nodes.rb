@@ -21,14 +21,11 @@ def count_tree_nodes node
     if node == nil
         return 0
     end
-    require 'pry'
-    binding.pry
+
     les = count_tree_nodes(node.left)
-    binding.pry
 
     ris = count_tree_nodes(node.right)
     current_val = les + ris + 1
-    binding.pry
 
     return current_val
 end
