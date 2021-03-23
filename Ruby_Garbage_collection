@@ -77,6 +77,7 @@ Here is the below memory structure
  
  The concept of Recursion solves many problems and makes the process easier as when calculating through Iterative process. Thus, if a person masters the concept of Recursion, one could solve many problems in lesser time and lesser lines of code. However, Recursion in Ruby sometimes produces “SystemStackError: stack level too deep” when a large number is used as an input(This number varies with the system). This means that we would have to use iterative approach to a problem involving large inputs.
 
+  Stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle. Queue is a container of objects (a linear collection) that are inserted and removed according to the first-in first-out (FIFO) principle
 
  Which is better recursion or iterative
  
@@ -221,3 +222,6 @@ work_hard 5
                     # |----------------------------|
 
 # For the above we took 5 internal space in the heap/stack
+
+
+https://stackoverflow.com/questions/5006395/does-ruby-have-containers-like-stacks-queues-linked-lists-maps-or-sets≈
