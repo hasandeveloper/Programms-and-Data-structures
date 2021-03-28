@@ -13,10 +13,15 @@ class BinaryTree
       end
   
       queue = Queue.new
+      # require 'pry'
+      # binding.pry
+
       queue.enqueue(root)
-  
+      # binding.pry
       while !queue.empty? do
         node = queue.dequeue
+        # binding.pry
+
         print "#{node.data} "
   
         unless node.left.nil?
