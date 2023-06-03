@@ -1,0 +1,22 @@
+General
+1.map = it is similar to array and it returns only array
+2.select = which return an array only if condition become true inside the block but map return all element with boolean if we use map instead select
+3.* = let say *array if you pass string as a argument it accept param as an array that is called splate operator.
+4.delete = let say array.delete(4) it deletes only elements 4 which is present
+5.delete_at = it delete index base let say array.delete_at(4)
+
+Ruby strongly typed or weekly typed
+=> Ruby is a weakly typed language becuse here is an example
+ "hello" + 3
+
+  O/P
+  Implicit conversion error
+
+
+OOPS
+1. Everything in ruby is an object except block of code let say
+
+=> def foo
+      
+   end
+

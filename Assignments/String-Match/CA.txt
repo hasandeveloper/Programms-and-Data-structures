@@ -1,0 +1,1 @@
+1. Study KMP algorithm how it works (karumanchi ref)

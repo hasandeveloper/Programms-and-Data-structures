@@ -1,0 +1,18 @@
+Part A
+https://www.geeksforgeeks.org/count-number-of-ways-to-cover-a-distance/
+https://www.geeksforgeeks.org/count-possible-paths-top-left-bottom-right-nxm-matrix/
+https://www.geeksforgeeks.org/find-the-longest-path-in-a-matrix-with-given-constraints/
+https://www.geeksforgeeks.org/find-maximum-length-snake-sequence/
+
+Part B
+https://practice.geeksforgeeks.org/problems/cutted-segments/0
+
+
+
+CA: Code for printing the LCS
+
+CA: Backtrace of all problems
+
+CA: Code : code for count no of coins to get value
+
+CA: Code for minimum no of coins to get V

@@ -1,0 +1,2 @@
+1. Code for better approach for find an element in biotonic array (without using pivot element)
+2. Code for  2 duplicates numbers in array

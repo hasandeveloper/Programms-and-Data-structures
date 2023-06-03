@@ -1,0 +1,20 @@
+>> User.find(2) # raises an exception
+>> User.find_by_id(2) # nil
+>> User.where(id: 2).first # nil
+
+what is has and belongs to 
+https://stackoverflow.com/questions/2780798/has-and-belongs-to-many-vs-has-many-through#:~:text=As%20far%20as%20I%20can,Categories_Stories%20Table%20story_id%20%7C%20category_id
+
+what is includes and joins db(this prefers lazy and eager loading)
+https://medium.com/@swapnilggourshete/rails-includes-vs-joins-9bf3a8ada00#:~:text=Includes%20uses%20eager%20loading%20whereas,be%20performed%20on%20associated%20tables.
+
+what is after create and after save
+https://stackoverflow.com/questions/33890458/difference-between-after-create-after-save-and-after-commit-in-rails-callbacks#:~:text=The%20difference%20between%20after_create%20%2C%20after_save,called%20when%20creating%20an%20object
+
+Rails interview questions
+https://career.guru99.com/top-34-ruby-on-rail-interview-questions/
+
+Very Important for active record RDBMS to make robust application
+https://guides.rubyonrails.org/active_record_querying.html#specifying-conditions-on-the-joined-tables
+
+what is html_safe?

@@ -1,0 +1,5 @@
+
+1. Comparison Adj List  and Adj Matrix  which is better n why ?
+2. Comparison BFS and DFS which is better n why ?
+
+3. Snake and Ladder Problem
