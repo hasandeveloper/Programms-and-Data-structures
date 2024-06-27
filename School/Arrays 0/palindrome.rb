@@ -20,3 +20,5 @@ def palin_array(array)
 end
 
 p palin_array([121,222,33,4])
+
+

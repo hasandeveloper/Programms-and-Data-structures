@@ -222,7 +222,7 @@ p swap_str "Hello-LOL"
 # ----------------------------------------------------------------------------------------------------------------
 
 
-# create hash with character as key and count of the character as value
+# create hash with character as key and count of the character as value - not required to 2024 interview
 
 
 def character_frequency str
@@ -271,4 +271,159 @@ end
 p even_odd array
 
 
+
+26
+
+check_array_sorted.rb - not required to 2024 interview
+find_fact_number.rb - done
+has.rb - done 
+one_line_code_sum_of_val.rb - not required to 2024 interview
+palindrome.rb - done
+print_all_pairs_sum_k.rb - not required to 2024 interview
+print_all_pairs.rb - not required to 2024 interview
+tes.rb - work only missing element problem 
+anagram.rb - done
+mean_and_median.rb
+
+
+#convert this "a" into an array
+a = "/test/test12/18"
+a.split('/').reject(&:empty?)
+
+
+# Storable company
+
+# Given a list of available storage units (including their dimensions) and a customer's space requirements,
+# determine which unit is the cheapest option for the customer.
+#
+#
+# The following customer requirements will be provided:
+# Total Floor Area Required (square feet)
+# Largest Single Item Dimensions (LxWxH)
+class StorageUnit
+    attr_accessor :unit_id
+    attr_accessor :price
+    attr_accessor :dimensions
+   
+   
+    def initialize(args = {})
+      @unit_id = args[:unit_id]
+      @price = args[:price]
+      @dimensions = args[:dimensions]
+    end
+   
+   
+    def ==(other)
+      other&.unit_id == @unit_id &&
+        other&.price == @price &&
+        other&.dimensions == @dimensions
+    end
+   
+   
+   end
+   
+   
+   class Dimensions
+    attr_accessor :length
+    attr_accessor :width
+    attr_accessor :height
+   
+   
+    def initialize(args = {})
+      @length = args[:length]
+      @width = args[:width]
+      @height = args[:height]
+    end
+   
+   
+    def ==(other)
+      other&.length == @length &&
+        other&.width == @width &&
+        other&.height == @height
+    end
+   end
+   
+   require 'pry'
+   # TODO:
+   def cheapest_viable_unit(available_units:, requested_floor_area:)
+       # non optimise
+   
+       # units = []
+       # available_units.each do |unit|
+       #     calc = unit.dimensions.length * unit.dimensions.height
+       #     if calc >= requested_floor_area
+       #         units << unit
+       #     end
+       # end
+   
+       
+       # if units.empty?
+       #     return nil
+       # else
+       #     units.sort_by{ |unit| unit.price }.first
+       # end
+   
+       
+       # optimise
+       
+       units = available_units.select{ |unit|  unit.dimensions.length * unit.dimensions.height >=  requested_floor_area ? unit : nil }
+       units.sort_by{ |unit| unit.price }.first
+   end
+   
+   
+   
+   
+   def run_test(expected, inputs)
+    if cheapest_viable_unit(**inputs) == expected
+      puts 'pass'
+    else
+      puts 'fail'
+    end
+   end
+   
+   
+   
+   
+   unit1 = StorageUnit.new(
+    unit_id: '1',
+    price: 60.00,
+    dimensions: Dimensions.new(length: 1, width: 1, height: 1)
+   )
+   
+   
+   unit2 = StorageUnit.new(
+    unit_id: '2',
+    price: 80.00,
+    dimensions: Dimensions.new(length: 6, width: 5, height: 8)
+   )
+   
+   
+   unit3 = StorageUnit.new(
+    unit_id: '3',
+    price: 100.00,
+    dimensions: Dimensions.new(length: 12, width: 8, height: 6)
+   )
+   
+   
+   # When no units match the given requirements due to needed area should return nil
+   units_input = [unit1, unit2, unit3]
+   needed_area = 97
+   run_test(
+    nil,
+    { available_units: units_input, requested_floor_area: needed_area }
+   )
+   # When multiple units match the needed size, should return the cheapest unit.
+   units_input = [unit3, unit2, unit1]
+   needed_area = 30
+   run_test(
+    unit2,
+    { available_units: units_input, requested_floor_area: needed_area }
+   )
+   
+   
+   # largest item check -> If the largest item the customer has fits into the storage unit
+   
+   
+   
+   
 
